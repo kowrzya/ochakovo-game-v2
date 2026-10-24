@@ -1,0 +1,32 @@
+{
+  "name": "ochakovo-game",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "«Очаково: твой первый рабочий день» — игровой HR-инструмент (MVP для хакатона)",
+  "scripts": {
+    "dev": "concurrently -n api,web -c red,blue \"node --watch server/index.js\" \"vite\"",
+    "build": "tsc --noEmit -p client && vite build",
+    "start": "node server/index.js",
+    "seed": "node server/seed.js",
+    "seed:reset": "node server/seed.js --reset",
+    "clear:test": "node server/clear.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^8.3.5"
+  }
+}

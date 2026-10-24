@@ -495,3 +495,34 @@ td select { font: inherit; padding: 4px; border-radius: 6px; border: 1px solid v
 .trial-entry > span:last-child { display: flex; flex-direction: column; gap: 4px; }
 .trial-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--red-soft); display: grid; place-items: center; flex: none; }
 .trial-icon img { width: 30px; height: 30px; }
+
+/* ---------- выравнивание сеток (замечание экспертов: «вёрстка съехала») ---------- */
+/* паттерн показывается целиком, без обрезки иконок */
+.hero-art { height: auto !important; aspect-ratio: 1400 / 1023; align-self: center; }
+.hero-art img { object-fit: contain; display: block; }
+
+/* карточки напитков одной высоты, «Запустить» на одной линии */
+.drinks { align-items: stretch; }
+.drink { height: 100%; }
+.drink small { flex: 1; }
+.drink-go { margin-top: 6px; }
+
+/* вакансии: одинаковые карточки, «Подробнее» прижато к низу, шестая ячейка — подсказка с игрой */
+.vac-card { display: flex; align-items: flex-start; gap: 14px; height: 100%; }
+.vac-card img { width: 44px; height: 44px; flex: none; }
+.vac-body { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; height: 100%; }
+.vac-body .vac-more { margin-top: auto; padding-top: 8px; }
+.vac-cta { background: var(--red-soft); border-style: dashed; border-color: var(--red); }
+.vac-cta b { color: var(--red-dark); }
+
+/* условия: 6 пунктов ровной сеткой */
+.cond-grid li { display: flex; align-items: flex-start; }
+
+/* HR-панель: таблица помещается на экран ноутбука */
+.admin table { font-size: 13px; }
+.admin th, .admin td { padding: 9px 6px; }
+.admin th { white-space: normal; }
+.admin td select { font-size: 13px; max-width: 120px; }
+
+@media (min-width: 721px) { .vac-grid, .cond-grid { grid-auto-rows: 1fr; } }
+@media (max-width: 720px) { .vac-body .vac-more { margin-top: 6px; padding-top: 0; } }

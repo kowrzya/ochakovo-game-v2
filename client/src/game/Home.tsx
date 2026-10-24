@@ -88,13 +88,22 @@ export default function Home({ onPlay, onVacancy, onApply, scrollTo, onScrolled 
             return (
               <button key={k} className="vac-card" onClick={() => onVacancy(k)}>
                 <img src={d.icon} alt="" />
-                <b>{d.title}</b>
-                <small>{d.role}</small>
-                <span className="vac-salary">{nb(d.salary)}</span>
-                <span className="vac-more">Подробнее <Icon name="arrowRight" size={14} /></span>
+                <span className="vac-body">
+                  <b>{d.title}</b>
+                  <small>{d.role}</small>
+                  <span className="vac-salary">{nb(d.salary)}</span>
+                  <span className="vac-more">Подробнее <Icon name="arrowRight" size={14} /></span>
+                </span>
               </button>
             );
           })}
+          <button className="vac-card vac-cta" onClick={() => scrollToSection('game')}>
+            <span className="vac-body">
+              <b>{home.jobs.cta.title}</b>
+              <small>{home.jobs.cta.text}</small>
+              <span className="vac-more">{home.jobs.cta.button} <Icon name="arrowRight" size={14} /></span>
+            </span>
+          </button>
         </div>
         <p className="open-day"><img src="/icons/tanks.png" alt="" /><span>{home.openDay}</span></p>
       </section>
@@ -103,7 +112,7 @@ export default function Home({ onPlay, onVacancy, onApply, scrollTo, onScrolled 
       <section className="section" id="conditions">
         <div className="section-head"><h2>{home.conditions.title}</h2></div>
         <ul className="cond-grid">
-          {content.benefits.map((b) => <li key={b}>{b}</li>)}
+          {home.conditions.items.map((b) => <li key={b}>{b}</li>)}
         </ul>
         <p className="note">{content.practicePeriod}</p>
       </section>

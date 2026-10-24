@@ -40,7 +40,7 @@ npm ci
 **2. Скопировать `.env.example` в `.env`:**
 
 - Linux/macOS: `cp .env.example .env`.
-- Windows PowerShell: `Copy-Item .env.example .env`. В `cmd copy .env.example .env`
+- Windows PowerShell: `Copy-Item .env.example .env`. В cmd `copy .env.example .env`
 
 В `.env` задайте свои `ADMIN_PASSWORD` — пароль HR и `SESSION_SECRET` — длинную случайную строку для подписи токенов. Без этих переменных пароль будет `ochakovo-demo`, а секрет сгенерируется при старте, сбрасывая старые токены после рестарта.
 
